@@ -57,30 +57,62 @@ button.deleteBtn {
 }
 
 #summary .card {
-  width: 180px;
-  height: 100px;
+  width: 250px;
+  height: 200px;
   color: #fff;
-  font-size: 1.2em;
-  border-radius: 12px;
+  font-size: 2em;
+  border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 2px 8px rgba(0,0,0,0.10);
   transition: background 0.3s;
-  
+  position: relative; /* Ensure the card is the positioning context for ::before */
+  padding-top: 50px; /* Add padding to make space for the emoji */
+  text-align: center; /* Center the text content */
 }
 
 #incomeCard {
-  background: #020103;}
+  background: #020103;
+}
 
-  #expenseCard {
-    background: #c087ef;
-  }
+#expenseCard {
+  background: #9d4edd;
+}
 
-  #debtCard {
-    background: #9d4edd;
-  }
+#savingCard {
+  background: #9ef01a;
+}
 
-  #savingCard {
-    background: #9ef01a;
-  }
+#debtCard::before {
+  content: "📉";
+}
+
+#incomeCard::before,
+#expenseCard::before,
+#debtCard::before,
+#savingCard::before {
+  content: attr(data-icon); /* Use the emoji as content */
+  position: absolute;
+  top: 10px; /* Position the emoji at the top */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+  font-size: 3em; /* Make the emoji larger */
+  line-height: 1; /* Prevent extra spacing */
+}
+
+#incomeCard::before {
+  content: "💰";
+}
+
+#expenseCard::before {
+  content: "💸";
+}
+
+#debtCard::before {
+  content: "📉";
+}
+
+#savingCard::before {
+  content: "💵";
+}
