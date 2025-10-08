@@ -1,0 +1,23 @@
+<form id="budgetForm">
+  <input type="text" id="itemName" placeholder="e.g. Rent, Salary" required />
+  <input type="number" id="itemAmount" placeholder="Amount" required />
+  <select id="itemCategory">
+    <option value="income">Income</option>
+    <option value="expense">Expense</option>
+    <option value="debt">Debt</option>
+    <option value="saving">Saving</option>
+  </select>
+  <button type="submit">Add</button>
+</form>
+
+<table id="budgetTable">
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Amount</th>
+      <th>Category</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
